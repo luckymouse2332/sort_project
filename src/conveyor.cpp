@@ -1,15 +1,22 @@
 #include "conveyor.h"
 #include <Arduino.h>
 
-void Conveyor::setup() 
+Conveyor &Conveyor::get_instance()
 {
-    // 引脚定义
+  static Conveyor instance(3, 2, 4);
+  return instance;
+}
+
+void Conveyor::setup()
+{
+  // 引脚定义
   pinMode(motor_forward_pin, OUTPUT);
   pinMode(motor_reverse_pin, OUTPUT);
   pinMode(motor_pwm_pin, OUTPUT);
 }
 
-void Conveyor::motor_forward() {
+void Conveyor::motor_forward()
+{
   // 电机正转启动
   digitalWrite(motor_forward_pin, HIGH);
   // 电机反转关闭
