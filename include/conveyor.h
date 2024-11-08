@@ -14,11 +14,7 @@ public:
    */
   Conveyor(int forward_pin, int reverse_pin, int pwm_pin) 
     : motor_forward_pin(forward_pin), motor_reverse_pin(reverse_pin), motor_pwm_pin(pwm_pin) {}
-
-  /**
-   * 获取实例
-   */
-  static Conveyor& get_instance();
+    
   /**
    * 初始化函数
    */

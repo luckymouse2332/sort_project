@@ -1,12 +1,6 @@
 #include "conveyor.h"
 #include <Arduino.h>
 
-Conveyor &Conveyor::get_instance()
-{
-  static Conveyor instance(3, 2, 4);
-  return instance;
-}
-
 void Conveyor::setup()
 {
   // 引脚定义
